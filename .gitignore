@@ -1,0 +1,16 @@
+# plugin artifacts
+/*.zip*
+/plugin.xml
+
+# grails working files
+/*.log
+/target
+
+# OSX cruft
+.DS_Store
+
+# IntelliJ project files
+/*.iws
+/*.iml
+/*.ipr
+/out
