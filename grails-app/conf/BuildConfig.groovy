@@ -21,10 +21,14 @@ grails.project.dependency.resolution = {
         }
 
         runtime(":hibernate:$grailsVersion",
-                ':resources:1.0-RC2',
+                ':resources:1.1.6',
                 ':jquery:1.7.2',
                 ':ember:0.9.8.1') {
             export = false
         }
+
+		test(':spock:0.6') {
+			export = false
+		}
     }
 }
