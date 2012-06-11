@@ -4,6 +4,8 @@ class EmberScaffoldingGrailsPlugin {
     def grailsVersion = '2.0 > *'
     def dependsOn = [ember: '0.9.8.1 > *']
     def pluginExcludes = [
+		'grails-app/conf/BootStrap.groovy',
+        'grails-app/views/layouts/main.gsp',
         'grails-app/views/error.gsp'
     ]
 

@@ -12,7 +12,8 @@ class ${className}Controller {
 
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-		render ScaffoldingHelper.getBindablePropertyValues(${className}.list(params)) as JSON
+		def ${propertyName}List = ScaffoldingHelper.getBindablePropertyValues(${className}.list(params))
+		render ${propertyName}List as JSON
     }
 
 //    def create() {
