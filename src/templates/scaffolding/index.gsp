@@ -29,7 +29,7 @@
 					<% } %></tr>
 				</thead>
 				<tbody>
-					{{#each App.listController}}
+					{{#each Scaffolding.listController}}
 						<tr><% for (p in props) { %>
 							<td>{{${p.name}}}</td>
 						<% } %></tr>

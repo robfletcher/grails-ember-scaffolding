@@ -1,21 +1,22 @@
-var App = Ember.Application.create();
+var Scaffolding = Ember.Application.create();
 
-App.List = Ember.Object.extend({});
+Scaffolding.ListController = Ember.ArrayController.extend({});
 
-App.ListController = Ember.ArrayController.extend({});
-
-App.ListView = Ember.View.extend({
-	controller: App.ListController,
+Scaffolding.ListView = Ember.View.extend({
+	controller: Scaffolding.ListController,
 	templateName: 'list'
 });
 
-App.listController = App.ListController.create();
-App.ListView.create({controller: App.listController}).appendTo('#content');
+Scaffolding.listController = Scaffolding.ListController.create();
+Scaffolding.ListView.create({
+	controller: Scaffolding.listController,
+	classNames: ['scaffold-list']
+}).appendTo('#content');
 jQuery.getJSON("list", function(data) {
-	App.listController.set('content', data);
+	Scaffolding.listController.set('content', data);
 });
 
-//App.Router = Ember.Router.extend({
+//Scaffolding.Router = Ember.Router.extend({
 //	root: Ember.State.extend({
 //		index: Ember.State.extend({
 //			route: '/',
@@ -23,9 +24,7 @@ jQuery.getJSON("list", function(data) {
 //		}),
 //		list: Ember.State.extend({
 //			route: '/list',
-//			connectOutlets: function(router) {
-//				router.get('applicationController').connectOutlet(App.ListView, App.List.find());
-//			}
+//			controller: Scaffolding.listController
 //		})
 //	})
 //});
