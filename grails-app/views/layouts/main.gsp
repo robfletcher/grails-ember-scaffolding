@@ -17,7 +17,7 @@
 		<g:layoutHead/>
         <r:layoutResources />
 	</head>
-	<body>
+	<body data-base-url="${pageProperty(name: 'body.data-base-url')}">
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>

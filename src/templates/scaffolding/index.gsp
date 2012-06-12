@@ -9,15 +9,13 @@
 		<title>\${entityName}</title>
 		<r:require module="ember-scaffolding"/>
 	</head>
-	<body>
+	<body data-base-url="\${createLink(action: 'index')}">
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
 				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 			</ul>
-		</div>
-		<div id="content" role="main">
 		</div>
 		<script type="text/x-handlebars" data-template-name="list">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
@@ -31,7 +29,8 @@
 				<tbody>
 					{{#each Scaffolding.listController}}
 						<tr><% for (p in props) { %>
-							<td>{{${p.name}}}</td>
+                            <% if (p.type == Date) { %><td>{{dateFormat ${p.name}}}</td><% }
+                            else { %><td>{{${p.name}}}</td><% } %>
 						<% } %></tr>
 					{{/each}}
 				</tbody>
