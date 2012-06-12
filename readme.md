@@ -2,7 +2,7 @@ This is a Grails plugin that allows you to use [Ember.js](http://emberjs.com/) b
 
 ## Usage
 
-After installing the plugin run `grails generate-all _domain class name_` to install scaffolding. Currently default
+After installing the plugin run `grails generate-all <em>domain class name</em>` to install scaffolding. Currently default
 scaffolding GSP templates (_create,gsp_, _edit.gsp_, _list.gsp_, _show.gsp_ and __form.gsp_) will be created alongside
 the _Ember_ enabled _index.gsp_ you can delete these extra files.
 
