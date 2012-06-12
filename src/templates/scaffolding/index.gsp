@@ -29,7 +29,7 @@
 				<tbody>
 					{{#each Scaffolding.listController}}
 						<tr><% for (p in props) { %>
-                            <% if (p.type == Date) { %><td>{{dateFormat ${p.name}}}</td><% }
+                            <% if (p.type == Date) { %><td>{{date ${p.name}}}</td><% }
                             else { %><td>{{${p.name}}}</td><% } %>
 						<% } %></tr>
 					{{/each}}

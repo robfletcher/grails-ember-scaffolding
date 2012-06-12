@@ -2,7 +2,7 @@
  * format a date using Moment.js
  * usage: {{dateFormat date format="MMMM YYYY"}}
  */
-Handlebars.registerHelper('dateFormat', function(context, block) {
+Handlebars.registerHelper('date', function(context, block) {
     if (this[context]) {
         var dateAttr = Handlebars.Utils.escapeExpression(moment(this[context]).format('YYYY-MM-DD'));
         var format = block.hash.format || "MMM Do, YYYY";
