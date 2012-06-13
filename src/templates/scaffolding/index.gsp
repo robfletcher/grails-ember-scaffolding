@@ -10,13 +10,21 @@
 		<r:require module="ember-scaffolding"/>
 	</head>
 	<body data-base-url="\${createLink(action: 'index')}">
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
+		<script type="text/x-handlebars" data-template-name="application">
+			{{view Scaffolding.NavbarView controllerBinding="controller.controllers.navbarController"}}
+			<div class="content">
+				{{outlet}}
+			</div>
+		</script>
+		<script type="text/x-handlebars" data-template-name="navbar">
+			%{--<div class="nav" role="navigation">--}%
+				<ul>
+					<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+					<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+					<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				</ul>
+			%{--</div>--}%
+		</script>
 		<script type="text/x-handlebars" data-template-name="list">
 			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
 			<table>
